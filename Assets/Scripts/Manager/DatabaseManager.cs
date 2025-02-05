@@ -16,7 +16,7 @@ public class DatabaseManager : MonoBehaviour
     public void SaveScore()
     {   //백그라운드로 작업 수행, 비동기 통신 : 메인코드와 별도로 실행되므로 통신할 때 끊김이 없음
         //BackendAsyncClass.BackendAsync(Backend.GameData.GetPrivateContents, "Score", UserDataBro => //이 이름(Score)으로된 프라이빗테이블에서 가져온 정보를 UserDataBro라는 이름의 변수?에 저장
-        var UserDataBro = Backend.GameData.GetTableList();
+     /*   var UserDataBro = Backend.GameData.GetTableList();
         //{
             if (UserDataBro.IsSuccess())
             {
@@ -37,11 +37,11 @@ public class DatabaseManager : MonoBehaviour
 
                     });
                 }
-            }
+            }*/
         //});
-        //PlayerPrefs.SetInt("Score1", score[0]);
-        //PlayerPrefs.SetInt("Score2", score[1]);
-        //PlayerPrefs.SetInt("Score3", score[2]);
+        PlayerPrefs.SetInt("Score1", score[0]);
+        PlayerPrefs.SetInt("Score2", score[1]);
+        PlayerPrefs.SetInt("Score3", score[2]);
 
     }
 
@@ -68,13 +68,13 @@ public class DatabaseManager : MonoBehaviour
             }
         });*/
         //
-        /*if(PlayerPrefs.HasKey("Score1"))
+        if(PlayerPrefs.HasKey("Score1"))
         {
             score[0] = PlayerPrefs.GetInt("Score1");
             score[1] = PlayerPrefs.GetInt("Score2");
             score[2] = PlayerPrefs.GetInt("Score3");
 
-        }*/
+        }
     }
 
 }
